@@ -22,4 +22,8 @@
         project: roboshop
         Component: "{{ item }}"
         Environment: "{{ env }}"
-        
+        Name: "{{ item }}-{{ env }"
+    loop: "{{ instance }}"
+    register: ec2_output
+    when: action == "create"
+
