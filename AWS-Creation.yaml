@@ -2,8 +2,8 @@
   hosts: all
   connections: local
   vars:
-    sg_id: 
-    ami_id:
+    sg_id: sg-0b9f1fbcf18f4096e
+    ami_id: ami-0220d79f3f480ecf5
     domain_name: venkata.onile
     env: dev
     action: create
