@@ -24,12 +24,12 @@
         Environment: "{{ env }}"
         Name: "{{ item }}-{{ env }"
     loop: "{{ instance }}"
-    register: ec2-output
+    register: ec2_output
     when: action == "create"
 
   - name:
     ansible.builtin.debug:
-      msg: "{{ ec2-output }}"
+      msg: "{{ ec2_output }}"
     when: action == "created"
 
   - name: create r53 record
