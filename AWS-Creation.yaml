@@ -19,7 +19,7 @@
       image_id: "{{ ami_id }}"
       name: "{{ item }}-{{ env }}"
       wait: false
-      tag:
+      tags:
         project: roboshop
         Component: "{{ item }}"
         Environment: "{{ env }}"
@@ -43,7 +43,7 @@
       value: "{{ item.instance[0].private_ip_address }}"
       wait: true
     loop: "{{ ec2_output.results }}"
-    when: "action == create"
+    when: action == "create"
 
   - name: create r53 record
     amazon.aws.route53:
