@@ -42,6 +42,7 @@
       ttl: 1
       value: "{{ item.instance[0].private_ip_address }}"
       wait: true
+      overwrite: true
     loop: "{{ ec2_output.results }}"
     when: action == "create"
 
@@ -54,6 +55,7 @@
       ttl: 1
       value: "{{ item.instance[0].public_ip_address }}"
       wait: true
+      overwrite: true
     loop: "{{ ec2_output.results }}"
     when: # if you have 2 conditions you can do it like below.
     - action == "create"
