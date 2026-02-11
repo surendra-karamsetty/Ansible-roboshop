@@ -40,7 +40,7 @@
       record: "{{ item.item }}-{{ env }}.{{ domain_name }}"
       type: A
       ttl: 1
-      value: "{{ item.instance[0].private_ip_address }}"
+      value: "{{ item.instances[0].private_ip_address }}"
       wait: true
       overwrite: true
     loop: "{{ ec2_output.results }}"
@@ -53,7 +53,7 @@
       record: "roboshop-{{ env }}.{{ domain_name }}"
       type: A
       ttl: 1
-      value: "{{ item.instance[0].public_ip_address }}"
+      value: "{{ item.instances[0].public_ip_address }}"
       wait: true
       overwrite: true
     loop: "{{ ec2_output.results }}"
