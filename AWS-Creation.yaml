@@ -18,6 +18,7 @@
       security_group: "{{ sg_id }}"
       image_id: "{{ ami_id }}"
       name: "{{ item }}-{{ env }}"
+      wait: false
       tag:
         project: roboshop
         Component: "{{ item }}"
